@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Особое приглашение 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Главная страница -->
+    <div id="mainPage" class="container">
+        <div class="hearts-bg"></div>
+
+        <div class="content">
+            <h1 class="title">У меня к тебе вопрос...</h1>
+
+            <div class="photo-gallery">
+                <img src="images/photo1.jpg" alt="Мы" class="photo main-photo">
+                <div class="photo-frame">
+                    <img src="images/photo2.jpg" alt="Момент" class="photo">
+                </div>
+            </div>
+
+            <p class="question">Хочешь пойти со мной на свидание 8.08?</p>
+
+            <div class="buttons-wrapper">
+                <button id="yesBtn" class="btn btn-yes">Да! 💖</button>
+                <button id="noBtn" class="btn btn-no">Нет 😢</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Форма для заполнения (появляется после "Да") -->
+    <div id="formPage" class="container hidden">
+        <div class="form-container">
+            <h2 class="form-title">Я так и знала! </h2>
+            <p class="form-subtitle">Давай спланируем наше идеальное свидание</p>
+
+            <form id="dateForm" class="romantic-form">
+                <div class="form-group">
+                    <label for="place">Куда хочешь пойти?</label>
+                    <select id="place" name="place" required>
+                        <option value="">Выбери вариант...</option>
+                        <option value="restaurant">Уютный ресторан/кофейня</option>
+                        <option value="cinema">Кино</option>
+                        <option value="walk">Прогулка по городу</option>
+                        <option value="picnic">Пикник на природе</option>
+                        <option value="surprise">Музей/выставка</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Во сколько?</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="outfit">Пожелания по наряду</label>
+                    <textarea id="outfit" name="outfit" rows="3"
+                              placeholder="Напиши, как хочешь, чтобы я оделась... "></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Твоё сообщение......?</label>
+                    <textarea id="message" name="message" rows="2"
+                              placeholder="Всё, что хочешь сказать..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Отправить 💌</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Страница успеха -->
+    <div id="successPage" class="container hidden">
+        <div class="success-content">
+            <div class="success-icon">💕</div>
+            <h2>До встречи! ❤️</h2>
+            <p>Я буду счастлива провести с тобой время!</p>
+            <p class="success-note">P.S. Обещаю одеться так, как ты хочешь 😉</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
