@@ -1,10 +1,12 @@
-﻿// Элементы
+// Элементы
 const mainPage = document.getElementById('mainPage');
 const formPage = document.getElementById('formPage');
 const successPage = document.getElementById('successPage');
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const dateForm = document.getElementById('dateForm');
+// Проверка на мобильное устройство
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 // Позиция кнопки "Нет"
 let noBtnRect = noBtn.getBoundingClientRect();
@@ -37,7 +39,7 @@ function moveButtonAway(mouseX, mouseY) {
     if (distance < 150 && distance > 0) {
         // Направление движения (от курсора)
         const angle = Math.atan2(buttonCenterY - mouseY, buttonCenterX - mouseX);
-        const velocity = 200; // Скорость движения
+        const velocity = 150; // Скорость движения
 
         let newX = rect.left + Math.cos(angle) * velocity;
         let newY = rect.top + Math.sin(angle) * velocity;
@@ -45,6 +47,8 @@ function moveButtonAway(mouseX, mouseY) {
         // Ограничения экрана
         const maxX = window.innerWidth - rect.width;
         const maxY = window.innerHeight - rect.height;
+        const minX = 10;
+        const minY = 10;
 
         newX = Math.max(0, Math.min(newX, maxX));
         newY = Math.max(0, Math.min(newY, maxY));
@@ -139,6 +143,6 @@ function createConfetti() {
 
 // Пасхалка - если кто-то пытается кликнуть на "Нет" через консоль
 noBtn.addEventListener('click', () => {
-    alert('Я же сказал, что кнопка убежит! 😄 Ты всё равно не сможешь отказаться!');
+    alert('Я же сказала, что кнопка убежит! 😄 Ты всё равно не сможешь отказаться!');
     moveButtonAway(window.innerWidth / 2, window.innerHeight / 2);
 });
